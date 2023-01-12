@@ -19,12 +19,40 @@ headerTitle.innerHTML='<h2> welcome to Ds</h2>';
 header.style.borderBottom='solid 3px #000' ;
 //header.style.color='blue';
 //get elements by class name
-var items=document.getElementsByClassName('list-group-item');
-console.log(items);
-console.log(items[1]);
-items[1].textContent='Namste';
-items[1].style.fontWeight= 'bold';
-items[1].style.backgroundColor='green';
+//var items=document.getElementsByClassName('list-group-item');
+//console.log(items);
+//console.log(items[1]);
+//items[1].textContent='Namste';
+//items[1].style.fontWeight= 'bold';
+//items[2].style.fontWeight= 'bold';
+//items[3].style.fontWeight= 'bold';
+//items[0].style.fontWeight= 'bold';
+//items[2].style.backgroundColor='green';
+//items[2].style.color='yellow';
+//items[0].style.color='blue';
+//items[1].style.color='green';
+//items[3].style.color='violet';
+//GET ELEMENT BY TAG NAME
+var li= document.getElementsByTagName('li');
+console.log(li);
+console.log(li[1]);
+li[1].textContent='Namste';
+li[1].style.fontWeight= 'bold';
+li[2].style.fontWeight= 'bold';
+li[3].style.fontWeight= 'bold';
+li[0].style.fontWeight= 'bold';
+li[2].style.backgroundColor='green';
+li[2].style.color='yellow';
+li[0].style.color='blue';
+li[1].style.color='green';
+li[3].style.color='violet';
+ for (var i=0;i<li.length;i++){
+    li[i].style.backgroundColor='pink';
+ }
+ //qurey selector
+ var header= document.querySelector('#main-header');
+ header.style.borderBottom='solid 4px #000';
+
 
 
 
