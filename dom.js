@@ -35,23 +35,42 @@ header.style.borderBottom='solid 3px #000' ;
 //GET ELEMENT BY TAG NAME
 var li= document.getElementsByTagName('li');
 console.log(li);
-console.log(li[1]);
-li[1].textContent='Namste';
-li[1].style.fontWeight= 'bold';
-li[2].style.fontWeight= 'bold';
-li[3].style.fontWeight= 'bold';
-li[0].style.fontWeight= 'bold';
-li[2].style.backgroundColor='green';
-li[2].style.color='yellow';
-li[0].style.color='blue';
-li[1].style.color='green';
-li[3].style.color='violet';
- for (var i=0;i<li.length;i++){
-    li[i].style.backgroundColor='pink';
- }
+//console.log(li[1]);
+//li[1].textContent='Namste';
+//li[1].style.fontWeight= 'bold';
+//li[2].style.fontWeight= 'bold';
+//li[3].style.fontWeight= 'bold';
+//li[0].style.fontWeight= 'bold';
+//li[1].style.backgroundColor='green';
+//li[2].style.textContent.display="none";
+//li[0].style.color='blue';
+//li[1].style.color='green';
+//li[3].style.color='violet';
+ //for (var i=0;i<li.length;i++){
+   // li[i].style.backgroundColor='pink';
+ //}
  //qurey selector
  var header= document.querySelector('#main-header');
  header.style.borderBottom='solid 4px #000';
+ var input =document.querySelector('input');
+ input.value='india '
+
+ var submit= document.querySelector('input[type="submit"]');
+ submit.value="SEND"
+ //var item=document.querySelector('.list-group-item');
+ //item.style.color='green';
+ //for (var i=0;i<item.length;i++){
+   //item[i].style.Color='green';
+   var secondItem=document.querySelector('.list-group-item:nth-child(2)');
+ secondItem.style.color='green';
+ //qurey selector all
+ var odd= document.querySelectorAll('li:nth-child(odd)');
+ for(var i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor='green';
+ }
+
+
+
 
 
 
