@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylee.css">
+    <title>Book a call</title>
+</head>
+
+<body>
+
+    <form id="form">
+        <h1>Book a call</h1>
+        <div>
+            <label for="name">Name</label> <br>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="email">Email</label> <br>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="Address">Address</label> <br>
+            <textarea name="Address" id="Address"></textarea>
+        </div>
+        <div id="button-row">
+            <div class="button">
+                <button type="submit" id="submit">submit</button>
+            </div>
+            <div class="button">
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="task10dom.js"></script>
+</body>
+
+</html>
