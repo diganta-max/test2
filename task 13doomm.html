@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task13DomCss.css">
+    <title>Dom task13</title>
+</head>
+
+<body>
+   
+    <form onsubmit="saveToLocalStorage(event)">
+        <h1>Book an apointment</h1>
+        
+        <div><label>Name</label>
+         <input type="text" name="username" required/>
+        </div>
+        <div>
+            <label>Email Id</label>
+        <input type="email" name="emailId" required/>
+        </div>
+        
+        <label>Phone Number</label>
+        <input type="tel" name="phonenumber" required/>
+        <button>Submit</button>
+    </form>
+    <ul id='listofitems'></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.5/axios.min.js"></script>
+    <script>
+        function saveToLocalStorage(event){
+            event.preventDefault();
+            const name=event.target.username.value;
+            const email= event.target.emailId.value;
+            const phonenumber=event.target.phonenumber.value;
+            const obj={
+                name,
+                email,
+                phonenumber
+            }
+            axios.post("https://crudcrud.com/api/a71626460e6a47e0b07a169323bfb17f/appoinmentdatafromuser",obj)
+            .then((response)=>{
+                console.log(response)
+            })
+            .catch((err)=>{
+                console,log(err)
+            })
+            localStorage.setItem(obj.email,JSON.stringify(obj))
+            showUserOnScreen(obj)
+            
+
+
+        }
+        function showUserOnScreen(obj){
+            const parentElem= document.getElementById('listofitems')
+            const childElem = document.createElement('li');
+            childElem.innerHTML = `${obj.name}-${obj.email}-${obj.phonenumber}`;
+            const btn = document.createElement("button");
+            btn.innerHTML = "Delete";
+            btn.addEventListener("click", function() {
+            localStorage.removeItem(obj.email);
+            childElem.remove();
+            });
+            
+            childElem.appendChild(btn);
+            parentElem.appendChild(childElem);
+        }
+        window.onload = function(){
+            for (let i = 0; i < localStorage.length; i++){
+              let obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
+               showUserOnScreen(obj);
+            }
+        }
+    </script>
+</body>
+</html>
